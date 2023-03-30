@@ -10,26 +10,25 @@
 </head>
 
 <body onload="onInit()">
-    <h1 class='main-title'>Minesweeper game</h1>
+    <h1 class="title main-title">Mine Sweeper</h1>
 
+    <div class="score">Your score is 🎮:<span></span></div>
+    <div class="timer">Timer ⏲️ <span></span></div>
+    <div class="smiley-btn" onclick="onInit()"><span></span></div>
+    <div class="board-container"></div>
 
-    <div class="board-container">
+    <div class="Lives">Number of lives is: <span></span></div>
+    <div class="mines-count">The count of mines is: <span></span></div>
+
+    <div class="levels">
+        <button class="beginner" onClick="setLevel(beginnerLevel)">Beginner mode</button>
+        <button class="medium" onClick="setLevel(mediumLevel)">Medium mode</button>
+        <button class="expert" onClick="setLevel(expertLevel)">Expert mode</button>
     </div>
 
-
-    <div class="buttons">
-        <button class="restart" onclick="restartGame()"></button>
-    </div>
 
     <script src="js/util.js"></script>
-    <script src="js/board.js"></script>
-
     <script src="js/game.js"></script>
-    <script src="js/mines.js"></script>
-
-    >
-
-
 </body>
 
 </html>
