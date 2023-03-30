@@ -2,7 +2,7 @@
 
 const MINE_IMG = '💣'
 const FLAG_IMG = '🚩'
-const SMILEY_IMG = '☺️'
+const SMILEY_IMG = '<img src=image/smiley.png > '
 const LIFE_IMG = '🧬'
 const BOOM_IMG = '💥'
 const EMPTY = ''
@@ -11,7 +11,7 @@ const elMinesCount = document.querySelector('.mines-count')
 const elLives = document.querySelector('.lives')
 const elTimer = document.querySelector('.timer')
 const elScore = document.querySelector('.score')
-const elRetartBtn = document.querySelector('.restart-btn')
+const elResetBtn = document.querySelector('.smiley-btn span')
 
 const beginnerLevel = {
     SIZE: 4,
@@ -62,28 +62,29 @@ function setLevels(strLevel) {
 }
 
 function renderBoard(board) {
-    var strHTML = "<table>";
+    var strHTML = '<table>';
     for (var i = 0; i < board.length; i++) {
-        strHTML += '<tr>'
+        strHTML += '<tr>';
         for (var j = 0; j < board[0].length; j++) {
             var cell = ''
             const className = `cell cell--board cell-${i}-${j}`
             strHTML += `<td class="${className}" onclick="onCellClicked(this, ${i}, ${j})" oncontextmenu="onCellClicked(event, ${i}, ${j})">${cell}</td>`
         }
-        strHTML += '</tr>'
+        strHTML += '</tr>';
     }
-    var strHTML = "<table>";
+    strHTML += '</table>';
     const elBoard = document.querySelector('.board-container')
-    const elResetBtn = document.querySelector('.smiley-btn span')
     elBoard.innerHTML = strHTML
     elResetBtn.innerText = SMILEY_IMG
 }
 
 function createBoard() {
     const board = []
-    for (var i = 0; i < gLevel.SIZE; i++) {
+    var size = gLevel.SIZE
+    var mines = gLevel.MINES
+    for (var i = 0; i < size; i++) {
         board[i] = []
-        for (var j = 0; j < gLevel.SIZE; j++) {
+        for (var j = 0; j < size; j++) {
             board[i][j] = createCell(i, j)
         }
     }
@@ -99,8 +100,6 @@ function restartGame() {
         secsPassed: 0
     }
 }
-
-
 
 
 function createCell(cellI, cellJ) {
@@ -165,6 +164,7 @@ function onCellClicked(cell) {
     if (currCell.isMine) onMineClicked(cell)
     currCell.isShown = true
     showCell(cell)
+    checkGameOver()
 }
 
 
@@ -176,6 +176,7 @@ function onMineClicked(cell) {
         cell.isShown = true
     }
     renderCell(cell.pos, MINE_IMG)
+    checkGameOver()
 }
 
 function firstOnClick() {
@@ -196,6 +197,12 @@ function checkGameOver() {
     if (gGame.ShownCount + gGame.markedCount === gLevel.SIZE * gLevel.SIZE) {
         gGame.isOn = false
         stopTimer()
+        // elResetBtn.innerHTML = // need to add badass smiley
+    }
+    if (gLives === 0) {
+        gGame.isOn = false
+        stopTimer()
+        // elResetBtn.innerHTML = // need to add you have lost
     }
 }
 
@@ -213,6 +220,13 @@ function showCells(cell) {
 
             }
         }
+    }
+}
+
+function getClassName() {
+    function getClassName(i, j) {
+        var cellClass = `cell-${i}-${j}`
+        return cellClass
     }
 }
 
