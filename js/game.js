@@ -41,7 +41,7 @@ var gLevel
 
 function onInit() {
     gFirstClick = true
-    gLevel = setLevels()
+    gLevel = setLevels("beginner")
     gGame = restartGame()
     gLives = 3
     gBoard = createBoard()
@@ -51,13 +51,15 @@ function onInit() {
 function setLevels(strLevel) {
     switch (strLevel) {
         case "beginner":
-            return beginnerLevel
+            gLevel = beginnerLevel
+            break;
         case "medium":
-            return mediumLevel
+            gLevel = mediumLevel
+            break;
         case "expert":
-            return expertLevel
+            gLevel = expertLevel
+            break;
     }
-
 }
 
 function renderBoard(board) {
