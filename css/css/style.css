@@ -1,0 +1,158 @@
+/* Styling the body element */
+body {
+    background-color: #333;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling the game container */
+.game {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Styling the title */
+.title {
+    font-size: 48px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* Styling the levels buttons */
+.levels button {
+    background-color: #444;
+    color: #fff;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.levels button:hover {
+    background-color: #555;
+}
+
+/* Styling the score */
+.score {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.best-score {
+    font-size: 32px;
+}
+
+/* Styling the timer */
+.timer {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.time {
+    font-size: 32px;
+}
+
+/* Styling the mines count */
+.mines {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.mines-count {
+    font-size: 32px;
+}
+
+/* Styling the board container */
+.board-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Styling the cell */
+.cell {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    background-color: #666;
+    border: 1px solid #444;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.cell.revealed {
+    background-color: #999;
+    cursor: default;
+}
+
+.cell.revealed span {
+    display: none;
+}
+
+/* Styling the bomb */
+.bomb {
+    background-color: #f00;
+}
+
+.bomb span {
+    display: none;
+}
+
+/* Styling the flag */
+.flag {
+    background-color: #0f0;
+}
+
+.flag span {
+    display: none;
+}
+
+/* Styling the lives */
+.lives {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.lives span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    background-image: url("images/heart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Styling the hints */
+.hints {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.hints span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    background-image: url("images/lightbulb.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Styling the smiley button */
+.btnSmiley {
+    background-color: #888;
+    color: #fff;
+    font-size: 24px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
