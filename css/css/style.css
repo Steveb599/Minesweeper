@@ -48,9 +48,13 @@ body {
 
 /* Styling the timer */
 .timer {
-    margin-top: 30px;
-    font-size: 24px;
-}
+width: 32px;
+    height: 32px;
+    background-image: url('image/hourglass.png');
+    /* set this to the path of your timer image file */
+    background-size: cover;
+    display: inline-block;
+    margin-right: 10px;}
 
 .time {
     font-size: 32px;
