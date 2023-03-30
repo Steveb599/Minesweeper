@@ -31,7 +31,6 @@ const expertLevel = {
 
 var gMinesCount
 var gBoard
-var gLives
 var gGame
 var gTimer
 var gLives
@@ -41,7 +40,7 @@ var gLevel
 
 function onInit() {
     gFirstClick = true
-    gLevel = setLevels("beginner")
+    setLevels("beginner")
     gGame = restartGame()
     gLives = 3
     gBoard = createBoard()
@@ -69,17 +68,16 @@ function renderBoard(board) {
         for (var j = 0; j < board[0].length; j++) {
             var cell = ''
             const className = `cell cell--board cell-${i}-${j}`
-            strHTML += `<td class="${className}" onclick="onCellClicked(event,this, ${i}, ${j})" oncontextmenu="onCellClicked(event,this, ${i}, ${j})">${cell}</td>`
+            strHTML += `<td class="${className}" onclick="onCellClicked(this, ${i}, ${j})" oncontextmenu="onCellClicked(event, ${i}, ${j})">${cell}</td>`
         }
         strHTML += '</tr>'
     }
     var strHTML = "<table>";
     const elBoard = document.querySelector('.board-container')
-    const elResetBtn = document.querySelector('smiley-btn span')
+    const elResetBtn = document.querySelector('.smiley-btn span')
     elBoard.innerHTML = strHTML
     elResetBtn.innerText = SMILEY_IMG
 }
-
 
 function createBoard() {
     const board = []
@@ -150,9 +148,6 @@ function setMinesNegsCount(board) {
         }
     }
 }
-
-
-
 
 
 function onCellMarked(cell) {
@@ -238,8 +233,6 @@ function showCell(cell) {
     gGame.shownCount++
     return
 }
-
-
 
 function startTimer() {
     gTimer = setInterval(() => {
