@@ -4,7 +4,7 @@ const MINE_IMG = '💣'
 const FLAG_IMG = '🚩'
 const SMILEY_IMG = `image/smiley.png`
 const LIFE_IMG = '🧬'
-const SUNGLASSES_SMILEY = `image/sunglasses-smiley.png`
+const SUNGLASSES_SMILEY = `image/sunglasses2.png`
 const LOSE_SMILEY = `image/lose-smiley.png`
 const BOOM_IMG = '💥'
 const EMPTY = ''
@@ -16,7 +16,7 @@ const elScore = document.querySelector('.score')
 const elResetBtn = document.querySelector('.smiley-btn span')
 
 var img = document.createElement('img');
-img.style = 'width:30px;';
+img.style = 'width:40px;';
 
 const beginnerLevel = {
   SIZE: 4,
