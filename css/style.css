@@ -9,6 +9,7 @@ body {
     margin-top: 20px;
     margin-bottom: 40px;
     color: #FFF;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .levels {
@@ -18,19 +19,25 @@ body {
 }
 
 .levels button {
-    background-color: #0074d9;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 20px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+background-image: linear-gradient(to right, #f4c4f3 0%, #fc67fa 51%, #f4c4f3 100%);
+margin: 10px;
+padding: 15px 45px;
+text-align: center;
+text-transform: uppercase;
+transition: 0.5s;
+background-size: 200% auto;
+color: white;
+box-shadow: 0 0 20px #eee;
+border-radius: 10px;
+display: block;
 }
+
 .levels button:hover {
-    background-color: #555;
-}
+background-position: right center;
+ color: #fff;
+text-decoration: none;
+ }
+
 
 .smiley-btn span {
     font-size: 48px;

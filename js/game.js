@@ -169,7 +169,6 @@ function onCellClicked(cell) {
   if (currCell.isMine) onMineClicked(cell)
   else {
     showCell(cell)
-    currCell.isShown = true
     checkGameOver()
   }
 }
