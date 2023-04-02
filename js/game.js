@@ -38,7 +38,7 @@ var gBoard
 var gGame
 var gTimer
 var gLives
-var gMinesLocation = []
+var gMinesLocation = {}
 var gFirstClick
 var gLevel = beginnerLevel
 
@@ -158,6 +158,7 @@ function onCellMarked(event, cell) {
   if (!gGame.isOn) return
   gGame.markedCount++
   renderCell(cell, FLAG_IMG)
+  checkGameOver()
 }
 
 function onCellClicked(cell) {
@@ -208,6 +209,7 @@ function checkGameOver() {
     gGame.isOn = false
     stopTimer()
     alert('You have won!')
+    stopTimer()
   }
 
   if (gLives === 0) {
@@ -216,10 +218,20 @@ function checkGameOver() {
     elResetBtn.appendChild(img)
     gGame.isOn = false
     stopTimer()
+    showAllMines(gBoard)
     alert('You have lost!')
+    stopTimer()
   }
 }
 
+function showAllMines(board) {
+  for (var i = 0; i < board.length; i++) {
+    for (var j = 0; j < board[0].length; j++) {
+      var currCell = board[i][j]
+      if (currCell.isMine) renderCell(currCell, MINE_IMG)
+    }
+  }
+}
 
 function expandShown(board, cell) {
   for (var i = -1; i < 2; i++) {
